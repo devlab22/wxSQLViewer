@@ -161,7 +161,7 @@ class MySQLGui(wx.Frame):
         if rows > 0:
             table.DeleteRows(0,rows)
             
-    def AppendData(self, data:[]):
+    def AppendData(self, data:list):
         
         for line in data:
             self.AppendLineData(line)
@@ -192,7 +192,7 @@ class MySQLGui(wx.Frame):
         self.AppendDataContent(tableContent)
         self.SetAppTitle(line[2])
         
-    def SetColTableContent(self, header:[]):
+    def SetColTableContent(self, header:list):
         
         self.RefreshTable(self.content)
         self.RemoveColTableContent()
@@ -207,7 +207,7 @@ class MySQLGui(wx.Frame):
         if cols > 0:
             self.content.DeleteCols(0,cols)
             
-    def AppendDataContent(self, data:[]):
+    def AppendDataContent(self, data:list):
         
         for line in data:
             self.AppendLineContent(line)
