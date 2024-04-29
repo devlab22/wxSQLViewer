@@ -6,7 +6,8 @@ from MySQLViewer import MySQLGui
 def main():
     
     app = wx.App()
-    frame = MySQLGui(parent=None, title="SQL Viewer", size=(960,480))
+    displaySize= wx.DisplaySize()
+    frame = MySQLGui(parent=None, title="SQL Viewer", size=(displaySize[0]/2, displaySize[1]/2))
     frame.Show()
     app.MainLoop()
     
