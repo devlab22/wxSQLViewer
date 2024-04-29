@@ -4,6 +4,7 @@ import wx
 import wx.grid as grid
 import os
 from sqlite_helper import MySqlite
+from MyLoginDialog import MyLoginDialog
 
 class MySQLGui(wx.Frame):
     
@@ -50,7 +51,12 @@ class MySQLGui(wx.Frame):
         self.SetToolsEnable()
         self.Layout()
         self.Center(wx.BOTH)
-        
+
+        dia = MyLoginDialog(parent=self, style=wx.DEFAULT_DIALOG_STYLE|wx.RESIZE_BORDER, title='Login')
+        if(dia.ShowModal() == wx.ID_OK):
+            data = dia.GetData()
+            print(data)
+
     def AddToolbar(self):
         
         self.myToolbar = self.CreateToolBar()
